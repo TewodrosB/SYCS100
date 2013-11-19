@@ -1,5 +1,4 @@
 
-
 def bsearch(list,searchvalue):
     
     low=0
@@ -34,4 +33,18 @@ def bsearch(numbers,value):
         else:
             return mid
     return -1
-
+#--------------------------------------------------------------
+# Tewodros Bejiga @02618567
+dedef bsearch(list,target):
+    low = 0                         # low is the first index of the list
+    high = len(list) -1             # high is the highest index in the list.
+    while low <= high:
+        mid =(low + high)/2         # mid is the index of the middle element of the list 
+        if target == list[mid]:     # check to see if the target element is equal to the middle element
+            return mid              # if the target element is exactlly equal to the middle element then return the index of the middle element.
+        elif target < list[mid]:    # But in a situation when the target element is less than the middle element then search the target in the lower half of the list.
+            high = mid - 1
+        elif target > list[mid]:    # when the target element is greater than the middle element then search the element in the upper half of the list.
+            low = mid + 1
+    else:
+        return -1                   # Or if the target element is not in the list the code will return -1 in response to that
